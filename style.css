@@ -1,0 +1,187 @@
+/* --- إعدادات الثيم التايلندي (Thai Royal) --- */
+:root {
+    --bg-dark: #0d1b2a;     /* كحلي غامق جداً */
+    --card-bg: #1b263b;     /* كحلي أفتح للكروت */
+    --primary: #ef233c;     /* أحمر */
+    --gold: #ffd700;        /* ذهبي */
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --glass: rgba(27, 38, 59, 0.95);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'IBM Plex Sans Arabic', sans-serif; scroll-behavior: smooth; }
+
+body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; }
+
+/* --- الحاوية السحرية (ملموم 1000px) --- */
+.main-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 20px 50px;
+    position: relative;
+}
+
+/* --- الناف بار العائم --- */
+.navbar {
+    position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+    width: 90%; max-width: 1000px;
+    background: var(--glass); backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 215, 0, 0.15); border-radius: 50px;
+    padding: 0.8rem 2rem; z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none; font-family: sans-serif; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text-main); text-decoration: none; font-weight: 500; transition: 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+.menu-toggle { display: none; color: white; cursor: pointer; font-size: 1.5rem; }
+
+/* --- الهيرو --- */
+.hero-section { text-align: center; margin-bottom: 5rem; }
+.profile-frame {
+    width: 180px; height: 180px; margin: 0 auto 1.5rem;
+    border-radius: 50%; border: 3px solid var(--gold);
+    padding: 5px; box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+}
+.profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.hero-section h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.highlight-text { color: var(--gold); }
+.subtitle { color: var(--primary); font-size: 1.2rem; font-weight: 500; }
+
+/* --- الكروت العامة --- */
+.glass-card {
+    background: var(--card-bg); padding: 2.5rem; border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05); text-align: center; margin-bottom: 3rem;
+}
+.section-title { font-size: 2rem; margin-bottom: 2rem; text-align: center; display: block; width: 100%; }
+.section-title span { border-bottom: 3px solid var(--primary); padding-bottom: 5px; display: inline-block; }
+
+/* --- النصوص --- */
+.about-text { text-align: justify; text-align-last: center; }
+.about-text p { line-height: 1.8; color: var(--text-muted); margin-bottom: 1rem; font-size: 1.1rem; }
+.personal-note {
+    background: rgba(239, 35, 60, 0.1); border-right: 4px solid var(--primary);
+    padding: 1rem; margin-top: 1.5rem; border-radius: 8px;
+    display: flex; align-items: center; gap: 15px; text-align: right;
+}
+.icon-pulse { color: var(--primary); animation: pulse 2s infinite; }
+
+/* --- الإحصائيات والقيمة السوقية --- */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.stat-item {
+    background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 10px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    transition: 0.3s; border: 1px solid transparent; cursor: pointer;
+}
+.stat-item:hover { border-color: var(--gold); background: rgba(255, 215, 0, 0.05); transform: translateY(-5px); }
+.stat-item i { font-size: 1.5rem; color: var(--gold); }
+.stat-item span { font-weight: bold; font-size: 1rem; }
+
+.market-stats-container { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.market-box {
+    flex: 1; min-width: 250px; background: linear-gradient(135deg, #0d1b2a, #2b3a55);
+    padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3); text-align: center;
+}
+.market-box h3 { color: white; font-size: 1.5rem; margin-bottom: 0.5rem; }
+.market-box p { color: var(--text-muted); font-size: 0.9rem; }
+
+/* --- المهارات (كروت بالصور) --- */
+.about-me-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+.about-me-card {
+    background: var(--card-bg); border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 15px; padding: 2rem; flex: 1; min-width: 300px; text-align: center; transition: 0.3s;
+}
+.about-me-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.about-me-card h2 {
+    font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--gold);
+    border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; display: inline-block;
+}
+.small-img { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; align-items: center; }
+.small-img img { height: 50px; width: auto; object-fit: contain; transition: transform 0.3s; filter: brightness(0.9); }
+.small-img img:hover { transform: scale(1.1); filter: brightness(1.1); }
+
+/* --- شريط الشركاء --- */
+.marquee-wrapper { overflow: hidden; background: var(--card-bg); padding: 1.5rem 0; border-radius: 15px; margin-bottom: 3rem; }
+.marquee-track { display: flex; animation: scroll 20s linear infinite; width: max-content; }
+.marquee-track img { height: 50px; margin: 0 30px; filter: grayscale(100%); opacity: 0.7; transition: 0.3s; }
+.marquee-track img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+
+/* --- خدماتي --- */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.service-card {
+    background: var(--card-bg); padding: 2rem; border-radius: 15px;
+    text-align: center; transition: 0.3s; border: 1px solid transparent;
+}
+.service-card:hover { transform: translateY(-5px); border-bottom: 3px solid var(--gold); }
+.service-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+.service-card h3 { margin-bottom: 1rem; color: white; }
+.service-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* --- لماذا تختارني --- */
+.why-list { list-style: none; text-align: right; margin-top: 1.5rem; }
+.why-list li {
+    background: rgba(255,255,255,0.03); padding: 1rem; margin-bottom: 10px;
+    border-radius: 10px; border-right: 3px solid var(--gold); transition: 0.3s;
+}
+.why-list li:hover { background: rgba(255,255,255,0.08); transform: translateX(-5px); }
+
+/* --- أعمالي (الكروت الكبيرة - Big Grid) --- */
+.big-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* عمودين فقط ليكون الكرت كبير */
+    gap: 20px; width: 100%; margin-top: 1.5rem;
+}
+.big-card {
+    background-color: var(--card-bg); border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease;
+    display: flex; flex-direction: column; position: relative; cursor: pointer;
+}
+.big-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); }
+.card-image { width: 100%; height: 220px; overflow: hidden; }
+.card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.big-card:hover .card-image img { transform: scale(1.05); }
+.card-content { padding: 20px; text-align: right; }
+.card-content h3 { font-size: 1.3rem; color: var(--text-main); margin-bottom: 8px; font-weight: bold; }
+.card-content p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; }
+.card-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-weight: bold; font-size: 0.9rem; }
+
+/* --- التواصل والفوتر والمودال --- */
+.contact-form input, .contact-form textarea {
+    width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: none;
+    background: rgba(255,255,255,0.05); color: white; outline: none; border: 1px solid transparent;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
+.btn-primary {
+    width: 100%; padding: 1rem; background: var(--gold); color: #000;
+    border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.btn-primary:hover { background: #e6c200; transform: scale(0.98); }
+
+footer { text-align: center; margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; }
+.socials a { color: var(--text-muted); font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+.socials a:hover { color: var(--gold); }
+.copyright { margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; }
+
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+.modal-content { background: #1e293b; width: 90%; max-width: 500px; padding: 2rem; border-radius: 15px; border: 1px solid var(--gold); position: relative; text-align: center; }
+.close-modal { position: absolute; top: 10px; left: 15px; font-size: 2rem; color: var(--primary); cursor: pointer; }
+.modal-list { text-align: right; margin-top: 1.5rem; max-height: 400px; overflow-y: auto; }
+.list-row { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+.sm-img { width: 35px; height: 35px; object-fit: contain; }
+.list-row span { color: var(--gold); font-weight: bold; }
+.modal-img { width: 100%; border-radius: 10px; margin-bottom: 1rem; }
+.btn-link { display: inline-block; padding: 5px 15px; border: 1px solid var(--gold); border-radius: 50px; color: var(--gold); text-decoration: none; margin-top: 10px; }
+
+/* --- Animations & Responsive --- */
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes fadeInBottom { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-dark); flex-direction: column; padding: 1rem; text-align: center; border-radius: 0 0 20px 20px; }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+    .big-grid { grid-template-columns: 1fr; }
+}
